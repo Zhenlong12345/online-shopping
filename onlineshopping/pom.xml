@@ -10,6 +10,7 @@
   
   <properties>
     <javaee.version>7.0</javaee.version>
+    <spring.version>4.3.6.RELEASE</spring.version>
   </properties>
   <dependencies>
       <!-- JUNIT -->
@@ -19,6 +20,21 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- SPRING -->
+    <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+
+    <!-- JSTL -->
+    <dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+    
     
     <!-- JAVAEE API -->
     <dependency>
