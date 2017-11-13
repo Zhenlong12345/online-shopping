@@ -25,15 +25,23 @@
 
     <script type="text/javascript">
       window.menu='${title}'
+      
+      window.contextRoot='${contextRoot}'
     </script>
     <!-- Bootstrap core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
     
         <!-- Bootstrap literal theme  -->
     <link href="${css}/bootstrap-litera-theme.css" rel="stylesheet">
+    
+        <!-- Bootstrap DataTables -->
+    <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="${css}/myapp.css" rel="stylesheet">
+    
+    <!-- Glyphicon css -->
+    <link href="${css}/glyphicons.css" rel="stylesheet">
 
   </head>
 
@@ -66,6 +74,11 @@
    <%@include file="listProducts.jsp" %>
    </c:if>
    
+        <!-- Loading only when user clicks product -->
+   <c:if test="${userClickShowProduct==true}">
+   <%@include file="singleProduct.jsp" %>
+   </c:if>
+   
    </div>
     <!-- Footer comes here -->
    <%@include file="./shared/footer.jsp" %>
@@ -76,8 +89,15 @@
     <!-- Bootstrap core JavaScript -->
     <script src="${js}/bootstrap.min.js"></script>
     
+    <!-- DataTable Plugin -->
+    <script src="${js}/jquery.dataTables.js"></script>
+    
+        <!-- DataTable Bootstrap Script -->
+    <script src="${js}/dataTables.bootstrap.js"></script>
+    
     <!-- Self coded javascript -->
     <script src="${js}/myapp.js"></script>
+     
 </div>
   </body>
 
