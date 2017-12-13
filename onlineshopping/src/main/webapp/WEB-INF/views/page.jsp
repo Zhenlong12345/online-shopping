@@ -20,7 +20,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
+    <meta name="_csrf" content="${_csrf.token}">
+    <meta name="_csrf_header" content="${_csrf.headerName}">
+    
     <title>Online Shopping -${title}</title>
 
     <script type="text/javascript">
@@ -35,7 +38,7 @@
     <link href="${css}/bootstrap-litera-theme.css" rel="stylesheet">
     
         <!-- Bootstrap DataTables -->
-    <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="${css}/myapp.css" rel="stylesheet">
@@ -74,9 +77,19 @@
    <%@include file="listProducts.jsp" %>
    </c:if>
    
-        <!-- Loading only when user clicks product -->
+   <!-- Loading only when user clicks product -->
    <c:if test="${userClickShowProduct==true}">
    <%@include file="singleProduct.jsp" %>
+   </c:if>
+   
+   <!-- Loading only when user clicks manage products -->
+   <c:if test="${userClickManageProducts==true}">
+   <%@include file="manageProducts.jsp" %> 
+   </c:if>
+   
+   <!-- Loading only when user clicks Cart -->
+   <c:if test="${userClickShowCart==true}">
+   <%@include file="cart.jsp" %> 
    </c:if>
    
    </div>
@@ -86,15 +99,20 @@
    <!-- jQuery -->
     <script src="${js}/jquery.js"></script>
     
+   <!-- jQuery validator-->
+    <script src="${js}/jquery.validate.js"></script>
+    
     <!-- Bootstrap core JavaScript -->
     <script src="${js}/bootstrap.min.js"></script>
     
     <!-- DataTable Plugin -->
     <script src="${js}/jquery.dataTables.js"></script>
     
-        <!-- DataTable Bootstrap Script -->
-    <script src="${js}/dataTables.bootstrap.js"></script>
+    <!-- DataTable Bootstrap Script -->
+    <script src="${js}/dataTables.bootstrap4.js"></script>
     
+    <!-- Bootbox-->
+    <script src="${js}/bootbox.min.js"></script>
     <!-- Self coded javascript -->
     <script src="${js}/myapp.js"></script>
      
